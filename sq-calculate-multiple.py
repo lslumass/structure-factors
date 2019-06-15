@@ -6,7 +6,7 @@ import multiprocessing
 
 ##calculate the strucutre factor in alt-bulk system
 
-##definite calculate function
+##definite calculate function for each frame
 def sq_cal(frame):
     Sq_frame = [0]*bin_num
     q_bin_frame, Nq_frame = [0]*bin_num, [0]*bin_num
@@ -38,14 +38,14 @@ def sq_cal(frame):
 
 ##read files and definite varibles
 nframe = 10                
-f = open('strfact.xyz','r')
-fout = open('sq.dat','w')
+f = open('strfact.xyz','r')          #input file strfact.xyz
+fout = open('sq.dat','w')            #output file sq.dat
 
 #atom = str(raw_input("the atom type: "))
-atom = 'O'
-bin_factor = float(raw_input("the bin_factor: "))
+atom = 'O'            #以体系中O粒子来计算Sq。也可以指定别的类型。
+bin_factor = float(raw_input("the bin_factor: "))         #bin_factor用来控制q的bin大小。
 
-fgro = open('md.gro','r')
+fgro = open('md.gro','r')        #输入md.gro读取盒子大小。
 lines = fgro.readlines()
 N_tot = int(lines[1])
 line = lines[-1]
