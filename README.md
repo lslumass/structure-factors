@@ -22,3 +22,6 @@ output file:
     sq.dat
     并且会在屏幕输出第一个主峰的q及对应的d=2pi/q
     
+usage:
+    python < sq-calculate-.py
+    
