@@ -6,7 +6,7 @@ import multiprocessing
 
 ##calculate the strucutre factor in alt-bulk system
 
-##definite calculate function for each frame
+##definite calculate function for each frame   ##先定义每个frame计算Sq的函数
 def sq_cal(frame):
     Sq_frame = [0]*bin_num
     q_bin_frame, Nq_frame = [0]*bin_num, [0]*bin_num
@@ -103,13 +103,14 @@ for i in range(bin_num):
        c = 1.0/Nq[i]
     q_bin[i] = q_bin[i]*c
     
-##multiprocess to calculate Sq for each frame
+##multiprocess to calculate Sq for each frame   ##一共十个frame，所以调用10个processes
 p = multiprocessing.Pool(processes=10)
 frames = [0,1,2,3,4,5,6,7,8,9]
 Sq_all = p.map(sq_cal, frames)
 p.close()
 p.join()
 
+##对十个frame求平均
 Sq = []
 for bin_i in range(bin_num):
     Sq_i = []
