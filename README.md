@@ -1,5 +1,6 @@
 # structure-factors
 #calcualte structure factors (Sq) for polymer bulk system
+##use this script, please CITE: Phys. Chem. Chem. Phys., 2019, 21, 25148–25157. 
 
 该脚本用于计算聚合物本体自组装体系中不同相结构的结构参数
 
